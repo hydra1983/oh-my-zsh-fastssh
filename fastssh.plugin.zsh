@@ -24,9 +24,9 @@ function fscpu {
     source $profile
     if [ "$SSH_HOST" != "" ] && [ "$SSH_PORT" != "" ] && [ "$SSH_USER" != "" ] ; then
       if [ "$SSH_PASS" != "" ] ; then
-        sh -c "sshpass -p '$SSH_PASS' scp -p $SSH_PORT $local_path $SSH_USER@$SSH_HOST:$remote_path"
+        sh -c "sshpass -p '$SSH_PASS' scp -P $SSH_PORT $local_path $SSH_USER@$SSH_HOST:$remote_path"
       elif [ "$SSH_KEY" != "" ] ; then
-        sh -c "scp -i $SSH_KEY -p $SSH_PORT $local_path $SSH_USER@$SSH_HOST:$remote_path"
+        sh -c "scp -i $SSH_KEY -P $SSH_PORT $local_path $SSH_USER@$SSH_HOST:$remote_path"
       fi
     fi
   fi
@@ -41,9 +41,9 @@ function fscpd {
     source $profile
     if [ "$SSH_HOST" != "" ] && [ "$SSH_PORT" != "" ] && [ "$SSH_USER" != "" ] ; then
       if [ "$SSH_PASS" != "" ] ; then
-        sh -c "sshpass -p '$SSH_PASS' scp -p $SSH_PORT $SSH_USER@$SSH_HOST:$remote_path $local_path"
+        sh -c "sshpass -p '$SSH_PASS' scp -P $SSH_PORT $SSH_USER@$SSH_HOST:$remote_path $local_path"
       elif [ "$SSH_KEY" != "" ] ; then
-        sh -c "scp -i $SSH_KEY -p $SSH_PORT $SSH_USER@$SSH_HOST:$remote_path $local_path"
+        sh -c "scp -i $SSH_KEY -P $SSH_PORT $SSH_USER@$SSH_HOST:$remote_path $local_path"
       fi
     fi
   fi
