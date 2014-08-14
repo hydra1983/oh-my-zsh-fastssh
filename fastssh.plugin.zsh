@@ -34,9 +34,9 @@ function fscpu {
 
 function fscpd {
   profile=$FASTSSH_CONF_DIR/$1.conf
-  src_path=$2
-  des_path=$3
-  
+  remote_path=$2
+  local_path=$3
+
   if [ -s $profile ] ; then
     source $profile
     if [ "$SSH_HOST" != "" ] && [ "$SSH_PORT" != "" ] && [ "$SSH_USER" != "" ] ; then
