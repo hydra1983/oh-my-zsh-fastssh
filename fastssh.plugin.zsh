@@ -3,7 +3,6 @@ FASTSSH_CONF_DIR=$ZSH_CUSTOM/plugins/$plugin/conf.d
 
 function fssh {
   profile=$FASTSSH_CONF_DIR/$1.conf
-  echo $profile
   if [ -s $profile ] ; then
     source $profile
     if [ "$SSH_HOST" != "" ] && [ "$SSH_PORT" != "" ] && [ "$SSH_USER" != "" ] ; then
@@ -21,7 +20,6 @@ function fscpu {
   local_path=$2
   remote_path=$3
 
-  echo $profile
   if [ -s $profile ] ; then
     source $profile
     if [ "$SSH_HOST" != "" ] && [ "$SSH_PORT" != "" ] && [ "$SSH_USER" != "" ] ; then
@@ -38,8 +36,7 @@ function fscpd {
   profile=$FASTSSH_CONF_DIR/$1.conf
   src_path=$2
   des_path=$3
-
-  echo $profile
+  
   if [ -s $profile ] ; then
     source $profile
     if [ "$SSH_HOST" != "" ] && [ "$SSH_PORT" != "" ] && [ "$SSH_USER" != "" ] ; then
