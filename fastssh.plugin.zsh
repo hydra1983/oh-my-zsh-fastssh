@@ -11,7 +11,7 @@ function fssh {
       elif [ "$SSH_KEY" != "" ] ; then
         ssh -i $SSH_KEY -p $SSH_PORT $SSH_USER@$SSH_HOST
       fi
-    fi
+    fi    
   fi
 }
 
